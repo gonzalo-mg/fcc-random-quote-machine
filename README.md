@@ -1,4 +1,4 @@
-# FreeCodeCampo Front End Development Libraries Projects - Build a Random Quote Machine
+# FreeCodeCamp Front End Development Libraries Projects - Build a Random Quote Machine
 
 ## Objective: Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.
 
@@ -28,7 +28,9 @@ User Story #10: I can tweet the current quote by clicking on the #tweet-quote a 
 
 User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-## Framework
+## Language and Framework
+JavaScript
+REACT
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
