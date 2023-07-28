@@ -1,24 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import { QuoteBox } from './components/QuoteBox';
+//import { getRandomQuoteService } from './services/getRandomQuote';
 
 function App() {
+  // cache an array of quotes on start
+  //const quotes = getRandomQuoteService();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QuoteBox></QuoteBox>
   );
 }
 
