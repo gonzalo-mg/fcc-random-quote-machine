@@ -10,10 +10,31 @@ import { useEffect, useState } from "react";
 import { getQuotesLibraryService } from "../../services/getQuotes";
 
 export const QuoteBox = () => {
-  // set up quotes cache and variables
-  const quotesLibrary = getQuotesLibraryService();
-  const [quote, setQuote] = useState();
-  const [author, setAuthor] = useState();
+  
+  //set up quotes cache
+  console.log("QuoteBox - mounting");
+
+  const [quotesLibrary, setLibrary] = useState([]);
+  const [quote, setQuote] = useState("quote-0state");
+  const [author, setAuthor] = useState("author-0state");
+
+  console.log("QuoteBox - calling to getQuotesLibraryService()")
+  
+  useEffect(
+    ()=>{
+      const getQuotesLibrary = async () => {
+        const recoveredQuotes = await getQuotesLibraryService();
+        setLibrary(recoveredQuotes)
+      };
+      getQuotesLibrary();
+    }
+    ,[])
+  
+
+  console.log("QuoteBox - quotesLibrary:");
+  console.log(quotesLibrary);
+
+  
 
   const getRandomQuote = () => {
     //choose random quote object with random index to choose from cache of quotes
@@ -25,12 +46,7 @@ export const QuoteBox = () => {
   };
 
   // autoload and refresh quote
-  useEffect(() => {
-    const updateQuote = () => {
-      return getRandomQuote();
-    };
-    updateQuote();
-  }, []);
+  //useEffect(()=>getRandomQuote(), []);
 
   return (
     <article id="quote-box">
