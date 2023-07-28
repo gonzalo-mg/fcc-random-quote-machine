@@ -9,37 +9,22 @@ import { ButtonGeneric } from "../ButtonGeneric";
 import { useEffect, useState } from "react";
 import { getQuotesLibraryService } from "../../services/getQuotes";
 
-export const QuoteBox = () => {
+export const QuoteBox = ({library}) => {
   
   //set up quotes cache
   console.log("QuoteBox - mounting");
+  console.log("QuoteBox - library:");
+  console.log(library);
 
-  const [quotesLibrary, setLibrary] = useState([]);
+  //const [quotesLibrary, setLibrary] = useState([]);
   const [quote, setQuote] = useState("quote-0state");
   const [author, setAuthor] = useState("author-0state");
 
-  console.log("QuoteBox - calling to getQuotesLibraryService()")
-  
-  useEffect(
-    ()=>{
-      const getQuotesLibrary = async () => {
-        const recoveredQuotes = await getQuotesLibraryService();
-        setLibrary(recoveredQuotes)
-      };
-      getQuotesLibrary();
-    }
-    ,[])
-  
-
-  console.log("QuoteBox - quotesLibrary:");
-  console.log(quotesLibrary);
-
-  
 
   const getRandomQuote = () => {
     //choose random quote object with random index to choose from cache of quotes
     const randomQuote =
-      quotesLibrary[Math.floor(Math.random() * quotesLibrary.length)];
+      library[Math.floor(Math.random() * library.length)];
 
     setQuote(randomQuote.quote);
     setAuthor(randomQuote.author);
