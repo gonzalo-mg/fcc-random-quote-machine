@@ -1,38 +1,76 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: burlywood;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  width: 450px;
   text-align: center;
+  display: block;
+  margin: 15px auto 30px auto;
+  font-size: 2em;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer {
+  width: 450px;
+  text-align: center;
+  display: block;
+  margin: 15px auto 30px auto;
+  font-size: 0.8em;
+  color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#quote-box {
+  border-radius: 3px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: whitesmoke;
 }
 
-.App-link {
-  color: #61dafb;
+#text {
+  width: 450px;
+  height: auto;
+  padding: auto;
+  font-size: 1.5em;
+  text-align: start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#author {
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  font-size: 1em;
+  text-align: end;
+}
+
+#new-quote {
+  width: 450px;
+  height: 50px;
+  padding: 2px;
+  font-size: 1em;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+#tweet-quote {
+  width: 450px;
+  height: auto;
+  margin-top: 1rem;
+  font-size: 1em;
+  text-align: center;
 }

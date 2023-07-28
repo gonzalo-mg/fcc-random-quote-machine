@@ -3,43 +3,58 @@ quote-box
 */
 import "./index.css";
 //import PropTypes from "prop-types";
+import { getQuotesLibraryService } from "../../services/getQuotes";
 
 import { ButtonGeneric } from "../ButtonGeneric";
 
 import { useEffect, useState } from "react";
-import { getQuotesLibraryService } from "../../services/getQuotes";
 
-export const QuoteBox = ({library}) => {
-  
+export const QuoteBox = () => {
   //set up quotes cache
-  console.log("QuoteBox - mounting");
-  console.log("QuoteBox - library:");
-  console.log(library);
 
-  //const [quotesLibrary, setLibrary] = useState([]);
-  const [quote, setQuote] = useState("quote-0state");
-  const [author, setAuthor] = useState("author-0state");
+  const [library, setLibrary] = useState([]);
 
+  // fetch quotes array
+  useEffect(
+    ()=>{
+      const getQuotesLibrary = async () => {
+        const recoveredQuotes = await getQuotesLibraryService();
+        setLibrary(recoveredQuotes)
+      };
+      getQuotesLibrary();
+    }
+    ,[])
 
-  const getRandomQuote = () => {
+    const [text, setText] = useState("Quotes are pretentious");
+    const [author, setAuthor] = useState("Myself");
+
+  const getRandomQuote = async () => {
     //choose random quote object with random index to choose from cache of quotes
-    const randomQuote =
-      library[Math.floor(Math.random() * library.length)];
+    const randomQuote = library[Math.floor(Math.random() * library.length)];
 
-    setQuote(randomQuote.quote);
+    setText(randomQuote.quote);
     setAuthor(randomQuote.author);
   };
 
-  // autoload and refresh quote
-  //useEffect(()=>getRandomQuote(), []);
+/*    // autoload and refresh quote
+  useEffect(
+    ()=>{
+      const chooseQuote = async () => {
+        const randomQuote = await getRandomQuote();
+        setText(randomQuote.quote);
+        setAuthor(randomQuote.author);
+      };
+      chooseQuote();
+    }
+    ,[]); */
 
   return (
     <article id="quote-box">
-      <p id="text">{quote}</p>
-      <p id="author">{author}</p>
+      <p id="text">{text}</p>
+      <p id="author">- {author} -</p>
       <ButtonGeneric
         id={"new-quote"}
-        text={"Other"}
+        text={"Other quote"}
         onClickFunction={getRandomQuote}
       ></ButtonGeneric>
       <a id={"tweet-quote"} href="twitter.com/intent/tweet">
