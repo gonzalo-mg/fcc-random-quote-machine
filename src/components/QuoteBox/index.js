@@ -12,8 +12,8 @@ export const QuoteBox = () => {
   //set up quotes cache
   const library = loadQuotesArray();
 
-  const [text, setText] = useState();
-  const [author, setAuthor] = useState();
+  const [text, setText] = useState(`Uh, it's my first day!`);
+  const [author, setAuthor] = useState("Homer J. Simpson");
 
   const getRandomQuote = async () => {
     //choose random quote object with random index to choose from cache of quotes
