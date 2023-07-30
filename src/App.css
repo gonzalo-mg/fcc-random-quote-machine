@@ -7,36 +7,46 @@
   vertical-align: baseline;
 }
 
-body {
+html, body {
   background-color: burlywood;
   color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   height: 100vh;
+  width: 100vw;
 
   background-image: url(/public/background-standing1.jpeg);
 }
 
-header {
-  width: 450px;
+#rootArticle{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header, main, footer {
+  flex-shrink: 0;
+}
+
+header, footer {
+  width: 100vw;
+  max-height: 25vh;
   text-align: center;
-  display: block;
-  margin: 15px auto 30px auto;
-  font-size: 3em;
+  
+  margin: auto;
+  font-size: 3rem;
   color: palevioletred;
-  font-weight: 900;
+
   font-family: 'Gorditas', cursive;
-  border-radius: 20px;
   background: pink;
 }
 
-footer {
-  width: 450px;
-  text-align: center;
-  display: block;
-  margin: 15px auto 30px auto;
-  font-size: 0.8em;
-  color: aliceblue;
+footer{
+  font-size: 1rem;
 }
 

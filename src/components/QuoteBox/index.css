@@ -1,10 +1,10 @@
 #quote-box {
     border-radius: 3px;
     border: solid 0.5rem burlywood;
-    margin: auto;
+    margin: 50px auto auto auto;
     width: 65vw;
-    height: 65vh;
-    padding: 40px 50px;
+    height: 60vh;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: end;

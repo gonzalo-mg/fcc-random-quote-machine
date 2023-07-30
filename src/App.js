@@ -1,14 +1,15 @@
-import './App.css';
-import { QuoteBox } from './components/QuoteBox';
+import "./App.css";
+import { QuoteBox } from "./components/QuoteBox";
 
 function App() {
-
   return (
-    <>
+    <article id="rootArticle">
       <header>Random Quote Machine</header>
-      <QuoteBox></QuoteBox>
+      <main>
+        <QuoteBox></QuoteBox>
+      </main>
       <footer>Gonzalo M.G.</footer>
-    </>
+    </article>
   );
 }
 
