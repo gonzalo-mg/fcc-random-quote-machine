@@ -1,14 +1,57 @@
 #quote-box {
     border-radius: 3px;
     border: solid 0.5rem burlywood;
-    position: relative;
-    width: 500px;
-    height: 300px;
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
     padding: 40px 50px;
     display: flex;
     flex-direction: column;
     justify-content: end;
-    background-color: whitesmoke;
+    background-color: antiquewhite;
+  }
+  
+  #text {
+    width: 95%;
+    height: auto;
+    padding: auto;
+    font-size: 18px;
+    text-align: start;
+  }
+
+  #author {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    font-size: 100%;
+    text-align: end;
+  }
+  
+  #new-quote {
+    width: 95%;
+    height: 10%;
+    padding: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: ghostwhite;
+  }
+  
+  #tweet-quote {
+    width: 95%;
+    height: auto;
+    margin: 10px;
+    font-size: 100%;
+    text-align: center;
+  }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  #quote-box {
+    width: 500px;
+    height: 300px;
+    padding: 40px 50px;
   }
   
   #text {
@@ -16,15 +59,13 @@
     height: auto;
     padding: auto;
     font-size: 1.5em;
-    text-align: start;
   }
 
   #author {
     width: 450px;
     height: auto;
     padding: 20px;
-    font-size: 1em;
-    text-align: end;
+    font-size: 1.5rem;
   }
   
   #new-quote {
@@ -34,7 +75,6 @@
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-    background-color: papayawhip;
   }
   
   #tweet-quote {
@@ -44,3 +84,4 @@
     font-size: 1rem;
     text-align: center;
   }
+}  
