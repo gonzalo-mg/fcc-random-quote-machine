@@ -6,17 +6,21 @@ import "./index.css";
 import { ButtonGeneric } from "../ButtonGeneric";
 
 import { useState } from "react";
-import { loadQuotesArray } from "../../quotesBackupLibrary";
+import { loadHomerQuotes, loadQuotesArray } from "../../quotesBackupLibrary";
 
 export const QuoteBox = () => {
-  //set up quotes cache
+  //set up quotes cache and states
+  // i want homer to be always the firstauthor
+  const homerLibrary = loadHomerQuotes();
   const library = loadQuotesArray();
 
-  const [text, setText] = useState(`Uh, it's my first day!`);
+  const zeroText =
+    homerLibrary[Math.floor(Math.random() * homerLibrary.length)].quote;
+  const [text, setText] = useState(zeroText);
   const [author, setAuthor] = useState("Homer J. Simpson");
 
+  // f to choose random quote by using a random index to acces the array
   const getRandomQuote = async () => {
-    //choose random quote object with random index to choose from cache of quotes
     const randomQuote = library[Math.floor(Math.random() * library.length)];
     setText(randomQuote.quote);
     setAuthor(randomQuote.author);
