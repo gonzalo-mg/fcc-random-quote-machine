@@ -35,9 +35,9 @@ export const QuoteBox = () => {
         text={"Other quote"}
         onClickFunction={getRandomQuote}
       ></ButtonGeneric>
-      <a id={"tweet-quote"} href="twitter.com/intent/tweet">
-        To Elon
-      </a>
+      {/* <a id={"tweet-quote"} href="twitter.com/intent/tweet">
+        tweet it!
+      </a> */}
     </article>
   );
 };

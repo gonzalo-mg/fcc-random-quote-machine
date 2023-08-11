@@ -19,19 +19,16 @@ html, body {
 
 #rootArticle{
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  flex-grow: 1;
+
+  align-items: center;
+  margin:auto;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  justify-items: center;
 }
 
-main {
-  flex-grow: 1;
-}
-
-header, main, footer {
-  flex-shrink: 0;
-}
 
 header, footer {
   width: 100vw;
